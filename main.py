@@ -16,6 +16,7 @@ def home():
         if form.is_submitted():
             result = request.form.to_dict()
             result = featureCorrection(result)
+            model = load('pickleFiles/HeartDiseasePredictor.pkl')
             estimation = model.predict(result)
             if estimation == 1:
                 return render_template('index.html', form=form, predict='You have a Heart Disease !')
@@ -26,6 +27,5 @@ def home():
 
 
 if __name__ == "__main__":
-    model = load('HeartDiseasePredictor.pkl')
     app.run(debug=True)
 
