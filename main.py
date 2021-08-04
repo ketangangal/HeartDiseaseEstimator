@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 from FeatureSetting.featureSetting import featureCorrection
 from joblib import load
+import pandas as pd
 from FormFields.forms import SignUpForm
 
 # flask app
@@ -14,9 +15,9 @@ def home():
     form = SignUpForm()
     if request.method == 'POST':
         if form.is_submitted():
+            model = load('pickleFiles/HeartDiseasePredictor.pkl')
             result = request.form.to_dict()
             result = featureCorrection(result)
-            model = load('pickleFiles/HeartDiseasePredictor.pkl')
             estimation = model.predict(result)
             if estimation == 1:
                 return render_template('index.html', form=form, predict='You have a Heart Disease !')
