@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> PREDICTION </title>
+    <link rel="stylesheet" href={{url_for("static",filename="style.css")}}>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">HEART DISEASE ESTIMATOR</div>
+    <div class="content">
+      <form action="" method="post">
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">{{ form.age.label }} </span>
+            <p>{{ form.age()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.sex.label }}</span>
+            <p>{{ form.sex()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.chest_pain_type.label }}</span>
+            <p>{{ form.chest_pain_type()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.resting_blood_pressure.label }}</span>
+            <p>{{ form.resting_blood_pressure()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.cholestoral.label }}</span>
+            <p>{{ form.cholestoral()}} </p>
+          </div>
+
+           <div class="input-box">
+            <span class="details">{{ form.fasting_blood_sugar.label }}</span>
+            <p>{{ form.fasting_blood_sugar()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.rest_ecg.label }}</span>
+            <p>{{ form.rest_ecg()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.Max_heart_rate.label }}</span>
+            <p>{{ form.Max_heart_rate()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.exercise_induced_angina.label }}</span>
+            <p>{{ form.exercise_induced_angina()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.oldpeak.label }}</span>
+            <p>{{ form.oldpeak()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.slope.label }}</span>
+            <p>{{ form.slope()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.vessels_colored_by_flourosopy.label }}</span>
+            <p>{{ form.vessels_colored_by_flourosopy()}} </p>
+          </div>
+
+          <div class="input-box">
+            <span class="details">{{ form.thalassemia.label }}</span>
+            <p>{{ form.thalassemia()}} </p>
+          </div>
+
+
+        </div>
+
+        <div class="input-box">
+            <span class="details">OUTPUT</span>
+            <p> {{ predict }}</p>
+        </div>
+
+        <div class="button">
+          <p> {{ form.sumbit()}} </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
